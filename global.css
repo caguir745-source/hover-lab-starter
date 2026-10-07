@@ -75,8 +75,24 @@ body {
 
 /* YOUR CODE: Lab 1 states (:hover, :focus-visible, :active) */
 
+.state-button:hover, .state-button:focus {
+  color: var(--extra-color);
+  background-color: var(--primary-color);
+}
 
+.state-button:focus-visible {
+  outline: 3px solid var(--triadic-color);
+  outline-offset: 4px;
+}
 
+.state-button:active {
+  transform: scale(0.92);
+}
+
+.state-button,
+.state-link {
+  transition: color var(--primary-color) ease-in, background-color 0.3s ease, var(--triadic-color) 0.15s ease;
+}
 
 /* ---------- Lab 2: The Timing Race ---------- */
 .race {
@@ -104,6 +120,29 @@ body {
 
 /* YOUR CODE: Lab 2 timing functions (one per racer) */
 
+.racer-linear {
+  transition-timing-function: linear;
+}
+
+.racer-ease {
+  transition-timing-function: ease;
+}
+
+.racer-ease-in {
+  transition-timing-function: ease-in;
+}
+
+.racer-ease-out {
+  transition-timing-function: ease-out;
+}
+
+.racer-ease-in-out {
+  transition-timing-function: ease-in-out;
+}
+
+.racer-mine {
+  transition-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
 
 
 
@@ -128,8 +167,30 @@ body {
 
 /* YOUR CODE: Lab 3 transforms (lift, grow, spin, tilt) */
 
+.tile {
+  transition: transform 0.4s ease;
+}
 
+.tile-lift:hover, 
+.tile-lift:focus-visible {
+  transform: rotate(0.5turn);
+  box-shadow:  10px 5px 5px red;
+}
 
+.tile-grow:hover, 
+.tile-grow:focus-visible {
+  transform: scale(2, 0.5);
+}
+
+.tile-spin:hover, 
+.tile-spin:focus-visible {
+  transform: skew(30deg, 20deg);
+}
+
+.tile-tilt:hover, 
+.tile-tilt:focus-visible {
+  transform: translate(120px, 50%);
+}
 
 /* ---------- Lab 4: My Hover Gallery ---------- */
 .gallery {
@@ -150,6 +211,23 @@ body {
 }
 
 /* YOUR CODE: Lab 4, six effects */
+
+  .effect-card {
+    transition: transform 0.4s ease-in;
+  }
+
+.effect-1:hover {
+  box-shadow:  10px 5px 5px red;
+  transform: scale(2, 0.5) translateX(100px);
+}
+
+.effect-2:hover {
+  transform: translate(140px, 50%) scaleX(5)
+}
+
+.effect-3:hover {
+  transform: skewY(50deg)
+}
 
 
 
